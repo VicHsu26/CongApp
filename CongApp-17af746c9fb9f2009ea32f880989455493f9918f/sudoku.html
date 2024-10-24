@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game - PanaceaPoint</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #2a7f38;
+            padding: 1rem 2rem;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #a3e4a3;
+        }
+
+        .content {
+            margin-top: 5rem;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="music.html">Music Library</a>
+        <a href="lab.html">Music Lab</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="bingo.html">Bingo</a>
+        <a href="calendar.html">Calendar</a>
+    </div>
+
+    <!-- Sudoku Game Section -->
+    <div class="content">
+        <div id="menu">
+            <h1>Sudoku</h1>
+            <button id="startGameBtn">Start Game</button>
+        </div>
+
+        <div id="game" style="display: none;">
+            <h2>Sudoku Puzzle</h2>
+            <div id="sudokuGrid"></div>
+            <div id="numberSelector" style="display: none;">
+                <button class="numberBtn">1</button>
+                <button class="numberBtn">2</button>
+                <button class="numberBtn">3</button>
+                <button class="numberBtn">4</button>
+                <button class="numberBtn">5</button>
+                <button class="numberBtn">6</button>
+                <button class="numberBtn">7</button>
+                <button class="numberBtn">8</button>
+                <button class="numberBtn">9</button>
+                <button class="numberBtn clearBtn">Clear</button>
+            </div>
+            <button id="resetBtn">Reset</button>
+            <p id="statusMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
