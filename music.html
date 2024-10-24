@@ -50,6 +50,15 @@
             top: 4.5rem;
         }
 
+        .search-bar {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
         .emotion-box {
             background-color: #e8eaf6;
             padding: 10px;
@@ -130,6 +139,7 @@
     <!-- Sidebar for Emotions -->
     <div class="sidebar">
         <h3>Select an Emotion</h3>
+        <input type="text" class="search-bar" id="emotionSearch" placeholder="Search for an emotion...">
         <div class="emotion-box">Happy</div>
         <div class="emotion-box">Sad</div>
         <div class="emotion-box">Relaxed</div>
@@ -317,6 +327,18 @@
             box.addEventListener('click', function () {
                 document.querySelectorAll('.emotion-box').forEach(b => b.classList.remove('selected'));
                 this.classList.add('selected');
+            });
+        });
+
+        document.getElementById('emotionSearch').addEventListener('input', function () {
+            const searchValue = this.value.toLowerCase();
+            document.querySelectorAll('.emotion-box').forEach(box => {
+                const emotion = box.textContent.toLowerCase();
+                if (emotion.includes(searchValue)) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
             });
         });
     </script>
