@@ -11,100 +11,50 @@
             background-color: #e8f1f5;
             margin: 0;
             padding: 0;
-            display: flex;
-        }
-        
-        .menu-button {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            background-color: #2a7f38;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 11000;
-            border-radius: 5px;
         }
 
-        .menu-button span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: #ffffff;
-            margin: 4px 0;
-        }
-
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .navbar {
             width: 100%;
             background-color: #2a7f38;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
             display: flex;
             align-items: center;
-        }
-
-        .top-bar h1 {
-            color: #ffffff;
-            margin: 0 auto;
-            font-size: 1.5rem;
-        }
-
-        .sidebar {
-            width: 0;
-            height: 100vh;
-            background-color: #2a7f38;
-            padding-top: 5rem;
+            padding: 1rem 2rem;
             position: fixed;
             top: 0;
             left: 0;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            transition: width 0.3s ease;
-            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
-        .sidebar.expanded {
-            width: 250px;
+        .navbar h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 1.5rem;
+            flex-grow: 1;
         }
 
-        .sidebar a {
-            display: block;
+        .navbar a {
             color: #ffffff;
             text-decoration: none;
-            margin: 1.5rem;
+            margin-left: 2rem;
             font-weight: bold;
             font-size: 1.1rem;
             transition: color 0.3s ease;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .sidebar a:hover {
+        .navbar a:hover {
             color: #a3e4a3;
         }
 
         .content {
-            margin-left: 0;
-            margin-top: 4rem;
+            margin-top: 5rem;
             padding: 2rem;
-            flex-grow: 1;
-            transition: margin-left 0.3s ease;
-            width: 100%;
-        }
-
-        .sidebar.expanded + .content {
-            margin-left: 250px;
         }
 
         .header-image {
             width: 100%;
             height: auto;
-            margin-top: 60px;
+            margin-top: 2rem;
         }
 
         .hero-section, .calendar-section {
@@ -143,20 +93,9 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
+    <!-- Navigation Bar -->
+    <div class="navbar">
         <h1>PanaceaPoint - Your Wellness Hub</h1>
-    </div>
-
-    <!-- Menu Button -->
-    <button class="menu-button" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Sidebar Navigation -->
-    <div class="sidebar" id="sidebar">
         <a href="home.html">Home</a>
         <a href="music.html">Music Library</a>
         <a href="lab.html">Music Lab</a>
@@ -188,15 +127,5 @@
             <p>The <span class="highlight">Caregiver Calendar</span> is here to help caregivers keep track of important activities, appointments, and daily routines for their loved ones. Staying organized is crucial, and our easy-to-use calendar ensures you have everything at your fingertips to manage care effectively and with confidence. By providing a clear overview of upcoming events and tasks, the calendar helps minimize stress and allows caregivers to focus on providing the best possible support for their loved ones. It is an essential tool for simplifying daily life, promoting peace of mind, and enhancing the quality of care.</p>
         </div>
     </div>
-
-    <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('expanded');
-        }
-
-        const toggleButton = document.querySelector('.menu-button');
-        toggleButton.addEventListener('click', toggleMenu);
-    </script>
 </body>
 </html>
