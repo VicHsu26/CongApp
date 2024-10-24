@@ -34,6 +34,25 @@
             margin: 4px 0;
         }
 
+        .top-bar {
+            width: 100%;
+            height: 60px;
+            background-color: #2a7f38;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1200;
+        }
+
+        .top-bar h1 {
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
         .navbar {
             width: 0;
             height: 100vh;
@@ -74,9 +93,9 @@
             height: 100vh;
             overflow-y: auto;
             position: fixed;
-            top: 0;
+            top: 60px;
             left: 0;
-            margin-top: 4.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .search-bar {
@@ -90,16 +109,18 @@
 
         .emotion-box {
             background-color: #e8eaf6;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
             text-align: center;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .emotion-box:hover {
             background-color: #c5cae9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .emotion-box.selected {
@@ -110,43 +131,56 @@
             margin-left: 270px;
             padding: 6rem 2rem;
             width: calc(100% - 270px);
+            transition: margin-left 0.3s, width 0.3s;
         }
 
         .content h1 {
             text-align: center;
             color: #333;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
         }
 
         .content button {
             display: block;
             margin: 2rem auto;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
             background-color: #3e8e41;
             color: #ffffff;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .content button:hover {
             background-color: #2a7f38;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .tracks-container {
             margin-top: 2rem;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .track {
             background-color: #f9f9f9;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 15px;
+            margin: 15px 0;
             display: flex;
             align-items: center;
-            border-radius: 5px;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .track:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .track img {
@@ -164,6 +198,7 @@
         .track-info a {
             font-weight: bold;
             color: #2a7f38;
+            font-size: 1.1rem;
         }
 
         .track-info a:hover {
@@ -172,6 +207,11 @@
     </style>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <h1>PanaceaPoint</h1>
+    </div>
+
     <!-- Menu Button -->
     <button class="menu-button" onclick="toggleMenu()">
         <span></span>
