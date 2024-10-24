@@ -46,9 +46,70 @@
             color: #a3e4a3;
         }
 
+        .menu-button {
+            position: fixed;
+            top: 0.5rem;
+            left: 1rem;
+            background-color: #2a7f38;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 11000;
+            border-radius: 5px;
+        }
+
+        .menu-button span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
+
+        .sidebar {
+            width: 0;
+            height: 100vh;
+            background-color: #2a7f38;
+            padding-top: 5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .sidebar.expanded {
+            width: 250px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            margin: 1.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sidebar a:hover {
+            color: #a3e4a3;
+        }
+
         .content {
             margin-top: 5rem;
             padding: 2rem;
+            transition: margin-left 0.3s ease;
+            width: 100%;
+        }
+
+        .sidebar.expanded + .content {
+            margin-left: 250px;
         }
 
         .header-image {
@@ -104,6 +165,23 @@
         <a href="calendar.html">Calendar</a>
     </div>
 
+    <!-- Menu Button -->
+    <button class="menu-button" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <a href="home.html">Home</a>
+        <a href="music.html">Music Library</a>
+        <a href="lab.html">Music Lab</a>
+        <a href="sudoku.html">Sudoku</a>
+        <a href="bingo.html">Bingo</a>
+        <a href="calendar.html">Calendar</a>
+    </div>
+
     <!-- Main Content -->
     <div class="content" id="content">
         <!-- Header Image -->
@@ -127,5 +205,12 @@
             <p>The <span class="highlight">Caregiver Calendar</span> is here to help caregivers keep track of important activities, appointments, and daily routines for their loved ones. Staying organized is crucial, and our easy-to-use calendar ensures you have everything at your fingertips to manage care effectively and with confidence. By providing a clear overview of upcoming events and tasks, the calendar helps minimize stress and allows caregivers to focus on providing the best possible support for their loved ones. It is an essential tool for simplifying daily life, promoting peace of mind, and enhancing the quality of care.</p>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('expanded');
+        }
+    </script>
 </body>
 </html>
