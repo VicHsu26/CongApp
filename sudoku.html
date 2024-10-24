@@ -19,6 +19,11 @@
             padding: 1rem 2rem;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         .navbar a {
@@ -32,6 +37,11 @@
 
         .navbar a:hover {
             color: #a3e4a3;
+        }
+
+        .content {
+            margin-top: 5rem;
+            padding: 2rem;
         }
     </style>
 </head>
@@ -47,28 +57,30 @@
     </div>
 
     <!-- Sudoku Game Section -->
-    <div id="menu">
-        <h1>Sudoku</h1>
-        <button id="startGameBtn">Start Game</button>
-    </div>
-
-    <div id="game" style="display: none;">
-        <h2>Sudoku Puzzle</h2>
-        <div id="sudokuGrid"></div>
-        <div id="numberSelector" style="display: none;">
-            <button class="numberBtn">1</button>
-            <button class="numberBtn">2</button>
-            <button class="numberBtn">3</button>
-            <button class="numberBtn">4</button>
-            <button class="numberBtn">5</button>
-            <button class="numberBtn">6</button>
-            <button class="numberBtn">7</button>
-            <button class="numberBtn">8</button>
-            <button class="numberBtn">9</button>
-            <button class="numberBtn clearBtn">Clear</button>
+    <div class="content">
+        <div id="menu">
+            <h1>Sudoku</h1>
+            <button id="startGameBtn">Start Game</button>
         </div>
-        <button id="resetBtn">Reset</button>
-        <p id="statusMessage"></p>
+
+        <div id="game" style="display: none;">
+            <h2>Sudoku Puzzle</h2>
+            <div id="sudokuGrid"></div>
+            <div id="numberSelector" style="display: none;">
+                <button class="numberBtn">1</button>
+                <button class="numberBtn">2</button>
+                <button class="numberBtn">3</button>
+                <button class="numberBtn">4</button>
+                <button class="numberBtn">5</button>
+                <button class="numberBtn">6</button>
+                <button class="numberBtn">7</button>
+                <button class="numberBtn">8</button>
+                <button class="numberBtn">9</button>
+                <button class="numberBtn clearBtn">Clear</button>
+            </div>
+            <button id="resetBtn">Reset</button>
+            <p id="statusMessage"></p>
+        </div>
     </div>
 
     <script src="script.js"></script>
