@@ -11,26 +11,78 @@
             background-color: #f0f4f8;
             margin: 0;
             padding: 0;
-        }
-
-        .navbar {
             display: flex;
-            background-color: #2a7f38;
-            padding: 1rem 2rem;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .navbar a {
+        .menu-button {
+            position: fixed;
+            top: 0.5rem;
+            left: 1rem;
+            background-color: #2a7f38;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 11000;
+            border-radius: 5px;
+        }
+
+        .menu-button span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2a7f38;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .top-bar h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .sidebar {
+            width: 0;
+            height: 100vh;
+            background-color: #2a7f38;
+            padding-top: 5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .sidebar.expanded {
+            width: 250px;
+        }
+
+        .sidebar a {
+            display: block;
             color: #ffffff;
             text-decoration: none;
-            margin: 0 1.5rem;
+            margin: 1.5rem;
             font-weight: bold;
             font-size: 1.1rem;
             transition: color 0.3s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .navbar a:hover {
+        .sidebar a:hover {
             color: #a3e4a3;
         }
 
@@ -60,11 +112,35 @@
             color: #555;
             margin-top: 1.5rem;
         }
+
+        .content {
+            margin-left: 0;
+            margin-top: 4rem;
+            padding: 2rem;
+            flex-grow: 1;
+            transition: margin-left 0.3s ease;
+        }
+
+        .expanded + .content {
+            margin-left: 250px;
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <h1>Caregiver Calendar - PanaceaPoint</h1>
+    </div>
+
+    <!-- Menu Button -->
+    <button class="menu-button" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
         <a href="home.html">Home</a>
         <a href="music.html">Music Library</a>
         <a href="lab.html">Music Lab</a>
@@ -73,11 +149,24 @@
         <a href="calendar.html">Calendar</a>
     </div>
 
-    <!-- Calendar Section -->
-    <div class="calendar-container">
-        <h1>Caregiver Calendar</h1>
-        <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id_here%40group.calendar.google.com&ctz=America%2FNew_York&mode=week&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showDate=1&showNav=1&showCalendars=1"></iframe>
-        <p>This calendar is designed to help caregivers manage important appointments and daily routines efficiently. Stay organized and keep track of everything in one place with the convenience of editing directly within the calendar view. No need to open a separate tab—just click on events to edit or add new activities as needed!</p>
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <!-- Calendar Section -->
+        <div class="calendar-container">
+            <h1>Caregiver Calendar</h1>
+            <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id_here%40group.calendar.google.com&ctz=America%2FNew_York&mode=week&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showDate=1&showNav=1&showCalendars=1"></iframe>
+            <p>This calendar is designed to help caregivers manage important appointments and daily routines efficiently. Stay organized and keep track of everything in one place with the convenience of editing directly within the calendar view. No need to open a separate tab—just click on events to edit or add new activities as needed!</p>
+        </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('expanded');
+        }
+
+        const toggleButton = document.querySelector('.menu-button');
+        toggleButton.addEventListener('click', toggleMenu);
+    </script>
 </body>
 </html>
