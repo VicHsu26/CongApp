@@ -11,17 +11,18 @@
             background-color: #f0f4f8;
             margin: 0;
             padding: 0;
+            display: flex;
         }
 
         .menu-button {
             position: fixed;
-            top: 1rem;
+            top: 0.5rem;
             left: 1rem;
             background-color: #2a7f38;
             border: none;
             padding: 10px;
             cursor: pointer;
-            z-index: 1100;
+            z-index: 11000;
             border-radius: 5px;
         }
 
@@ -49,25 +50,26 @@
 
         .top-bar h1 {
             color: #ffffff;
+            margin-left: 3%;
             font-size: 1.5rem;
         }
 
         .navbar {
-            width: 250px;
+            width: 0;
             height: 100vh;
             position: fixed;
             top: 0;
-            left: -250px;
+            left: 0;
             background-color: #2a7f38;
             overflow-x: hidden;
-            transition: left 0.3s;
+            transition: width 0.3s;
             padding-top: 3rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
 
         .navbar.expanded {
-            left: 0;
+            width: 250px;
         }
 
         .navbar a {
@@ -85,13 +87,10 @@
         }
 
         .content {
-            margin-left: 0;
+            margin-left: 270px;
             padding: 6rem 2rem;
-            transition: margin-left 0.3s;
-        }
-
-        .content.shifted {
-            margin-left: 250px;
+            width: calc(100% - 270px);
+            transition: margin-left 0.3s, width 0.3s;
         }
 
         #menu {
@@ -101,6 +100,57 @@
         #game {
             text-align: center;
             margin-top: 2rem;
+        }
+
+        #sudokuGrid {
+            display: grid;
+            grid-template-columns: repeat(9, 40px);
+            grid-template-rows: repeat(9, 40px);
+            gap: 5px;
+            justify-content: center;
+            margin: 2rem auto;
+        }
+
+        .sudoku-cell {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #333;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 40px;
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        .sudoku-cell:focus {
+            outline: none;
+            background-color: #e8eaf6;
+        }
+
+        #numberSelector {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .numberBtn {
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            font-size: 1.2rem;
+            background-color: #3e8e41;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .numberBtn:hover {
+            background-color: #2a7f38;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -128,7 +178,7 @@
     </div>
 
     <!-- Sudoku Game Section -->
-    <div class="content" id="content">
+    <div class="content">
         <div id="menu">
             <h1>Sudoku</h1>
             <button id="startGameBtn">Start Game</button>
@@ -137,7 +187,7 @@
         <div id="game" style="display: none;">
             <h2>Sudoku Puzzle</h2>
             <div id="sudokuGrid"></div>
-            <div id="numberSelector" style="display: none;">
+            <div id="numberSelector">
                 <button class="numberBtn">1</button>
                 <button class="numberBtn">2</button>
                 <button class="numberBtn">3</button>
@@ -157,9 +207,7 @@
     <script>
         function toggleMenu() {
             const navbar = document.getElementById('navbar');
-            const content = document.getElementById('content');
             navbar.classList.toggle('expanded');
-            content.classList.toggle('shifted');
         }
     </script>
 
