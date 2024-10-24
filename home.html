@@ -11,27 +11,56 @@
             background-color: #e8f1f5;
             margin: 0;
             padding: 0;
+            display: flex;
         }
         
-        .navbar {
-            display: flex;
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background-color: #2a7f38;
-            padding: 1rem 2rem;
-            justify-content: space-between;
+            padding: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
-        .navbar a {
+        .top-bar h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #2a7f38;
+            padding-top: 5rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            display: block;
             color: #ffffff;
             text-decoration: none;
-            margin: 0 1.5rem;
+            margin: 1.5rem;
             font-weight: bold;
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
 
-        .navbar a:hover {
+        .sidebar a:hover {
             color: #a3e4a3;
+        }
+
+        .content {
+            margin-left: 250px;
+            margin-top: 4rem;
+            padding: 2rem;
+            flex-grow: 1;
         }
 
         .header-image {
@@ -39,9 +68,9 @@
             height: auto;
         }
 
-        .hero-section {
+        .hero-section, .calendar-section {
             max-width: 1200px;
-            margin: 4rem auto;
+            margin: 2rem auto;
             padding: 2rem;
             background-color: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -49,13 +78,11 @@
             text-align: center;
         }
 
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .hero-section h1, .calendar-section h2 {
             color: #333;
         }
 
-        .hero-section p {
+        .hero-section p, .calendar-section p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 1.5rem auto;
@@ -74,35 +101,16 @@
             text-align: center;
             margin: 2rem auto;
         }
-
-        .calendar-section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .calendar-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .calendar-section p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 1.5rem auto;
-            line-height: 1.6;
-            color: #555;
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <h1>PanaceaPoint - Your Wellness Hub</h1>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
         <a href="home.html">Home</a>
         <a href="music.html">Music Library</a>
         <a href="lab.html">Music Lab</a>
@@ -111,26 +119,28 @@
         <a href="calendar.html">Calendar</a>
     </div>
 
-    <!-- Header Image -->
-    <img src="honors.png" alt="Honor Header" class="header-image">
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Header Image -->
+        <img src="honors.png" alt="Honor Header" class="header-image">
 
-    <!-- Arrow Down Icon -->
-    <div class="arrow-down">&#x2193;</div>
+        <!-- Arrow Down Icon -->
+        <div class="arrow-down">↓</div>
 
-    <!-- Hero Section -->
-  <div class="hero-section">
-        <h1>Welcome to PanaceaPoint</h1>
-        <p>At <span class="highlight">PanaceaPoint</span>, we believe in a holistic approach to wellness, providing you with engaging tools and activities to enhance your well-being. Our platform is designed to support both your mental and physical health, with a variety of resources that cater to different needs, whether you want to relax, focus, or simply have fun. We understand that wellness is personal, and our offerings are here to empower you on your unique journey.</p>
-        <p>Our <span class="highlight">Music Library</span> offers specially curated music playlists that leverage the benefits of music therapy to help you relax, improve focus, or uplift your spirit. Music therapy has been proven to reduce anxiety, enhance mood, and even improve cognitive function. Each playlist is crafted to address specific emotions, helping you tap into the transformative power of music in an accessible way.</p>
-        <p>The <span class="highlight">Music Lab</span> allows you to experiment with sounds and create your own music, fostering creativity and providing a fun, therapeutic outlet. Whether you are an experienced musician or just exploring sound for the first time, the Music Lab encourages self-expression and emotional release, giving you the freedom to create music that resonates with your feelings.</p>
-        <p>Engage your mind with our interactive <span class="highlight">Sudoku</span> puzzles, or enjoy a game of <span class="highlight">Bingo</span> for a bit of lighthearted fun. Sudoku is known to improve memory, enhance concentration, and stimulate problem-solving skills, while Bingo offers an enjoyable social activity that can be shared with friends and family. These games provide a perfect blend of mental exercise and entertainment.</p>
-        <p> 
-    </div>
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Welcome to PanaceaPoint</h1>
+            <p>At <span class="highlight">PanaceaPoint</span>, we believe in a holistic approach to wellness, providing you with engaging tools and activities to enhance your well-being. Our platform is designed to support both your mental and physical health, with a variety of resources that cater to different needs, whether you want to relax, focus, or simply have fun. We understand that wellness is personal, and our offerings are here to empower you on your unique journey.</p>
+            <p>Our <span class="highlight">Music Library</span> offers specially curated music playlists that leverage the benefits of music therapy to help you relax, improve focus, or uplift your spirit. Music therapy has been proven to reduce anxiety, enhance mood, and even improve cognitive function. Each playlist is crafted to address specific emotions, helping you tap into the transformative power of music in an accessible way.</p>
+            <p>The <span class="highlight">Music Lab</span> allows you to experiment with sounds and create your own music, fostering creativity and providing a fun, therapeutic outlet. Whether you are an experienced musician or just exploring sound for the first time, the Music Lab encourages self-expression and emotional release, giving you the freedom to create music that resonates with your feelings.</p>
+            <p>Engage your mind with our interactive <span class="highlight">Sudoku</span> puzzles, or enjoy a game of <span class="highlight">Bingo</span> for a bit of lighthearted fun. Sudoku is known to improve memory, enhance concentration, and stimulate problem-solving skills, while Bingo offers an enjoyable social activity that can be shared with friends and family. These games provide a perfect blend of mental exercise and entertainment.</p>
+        </div>
 
-    <!-- Calendar Section -->
-    <div class="calendar-section">
-        <h2>Caregiver Calendar</h2>
-        <p>The <span class="highlight">Caregiver Calendar</span> is here to help caregivers keep track of important activities, appointments, and daily routines for their loved ones. Staying organized is crucial, and our easy-to-use calendar ensures you have everything at your fingertips to manage care effectively and with confidence. By providing a clear overview of upcoming events and tasks, the calendar helps minimize stress and allows caregivers to focus on providing the best possible support for their loved ones. It is an essential tool for simplifying daily life, promoting peace of mind, and enhancing the quality of care.</p>
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+            <h2>Caregiver Calendar</h2>
+            <p>The <span class="highlight">Caregiver Calendar</span> is here to help caregivers keep track of important activities, appointments, and daily routines for their loved ones. Staying organized is crucial, and our easy-to-use calendar ensures you have everything at your fingertips to manage care effectively and with confidence. By providing a clear overview of upcoming events and tasks, the calendar helps minimize stress and allows caregivers to focus on providing the best possible support for their loved ones. It is an essential tool for simplifying daily life, promoting peace of mind, and enhancing the quality of care.</p>
+        </div>
     </div>
 </body>
 </html>
