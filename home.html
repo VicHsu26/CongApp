@@ -16,7 +16,7 @@
         
         .menu-button {
             position: fixed;
-            top: 0.5rem;
+            top: 1rem;
             left: 1rem;
             background-color: #2a7f38;
             border: none;
@@ -43,11 +43,13 @@
             padding: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+            display: flex;
+            align-items: center;
         }
 
         .top-bar h1 {
             color: #ffffff;
-            margin: 0;
+            margin: 0 auto;
             font-size: 1.5rem;
         }
 
@@ -86,37 +88,23 @@
             color: #a3e4a3;
         }
 
-        .toggle-button {
-            position: absolute;
-            top: 1rem;
-            right: -20px;
-            background-color: #2a7f38;
-            color: #ffffff;
-            border: none;
-            padding: 0.5rem;
-            cursor: pointer;
-            transition: right 0.3s ease;
-        }
-
-        .sidebar.expanded .toggle-button {
-            right: -50px;
-        }
-
         .content {
             margin-left: 0;
             margin-top: 4rem;
             padding: 2rem;
             flex-grow: 1;
             transition: margin-left 0.3s ease;
+            width: 100%;
         }
 
-        .expanded + .content {
+        .sidebar.expanded + .content {
             margin-left: 250px;
         }
 
         .header-image {
             width: 100%;
             height: auto;
+            margin-top: 60px;
         }
 
         .hero-section, .calendar-section {
