@@ -40,6 +40,12 @@
             top: 0;
             left: 0;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+            overflow: hidden;
+        }
+
+        .sidebar.collapsed {
+            width: 70px;
         }
 
         .sidebar a {
@@ -50,10 +56,29 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: color 0.3s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .sidebar a:hover {
             color: #a3e4a3;
+        }
+
+        .toggle-button {
+            position: absolute;
+            top: 1rem;
+            right: -20px;
+            background-color: #2a7f38;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: right 0.3s ease;
+        }
+
+        .sidebar.collapsed .toggle-button {
+            right: -50px;
         }
 
         .content {
@@ -61,6 +86,11 @@
             margin-top: 4rem;
             padding: 2rem;
             flex-grow: 1;
+            transition: margin-left 0.3s ease;
+        }
+
+        .collapsed + .content {
+            margin-left: 70px;
         }
 
         .header-image {
@@ -110,7 +140,8 @@
     </div>
 
     <!-- Sidebar Navigation -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
+        <button class="toggle-button" id="toggleButton">&#9776;</button>
         <a href="home.html">Home</a>
         <a href="music.html">Music Library</a>
         <a href="lab.html">Music Lab</a>
@@ -120,12 +151,12 @@
     </div>
 
     <!-- Main Content -->
-    <div class="content">
+    <div class="content" id="content">
         <!-- Header Image -->
         <img src="honors.png" alt="Honor Header" class="header-image">
 
         <!-- Arrow Down Icon -->
-        <div class="arrow-down">↓</div>
+        <div class="arrow-down">&#x2193;</div>
 
         <!-- Hero Section -->
         <div class="hero-section">
@@ -142,5 +173,16 @@
             <p>The <span class="highlight">Caregiver Calendar</span> is here to help caregivers keep track of important activities, appointments, and daily routines for their loved ones. Staying organized is crucial, and our easy-to-use calendar ensures you have everything at your fingertips to manage care effectively and with confidence. By providing a clear overview of upcoming events and tasks, the calendar helps minimize stress and allows caregivers to focus on providing the best possible support for their loved ones. It is an essential tool for simplifying daily life, promoting peace of mind, and enhancing the quality of care.</p>
         </div>
     </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleButton = document.getElementById('toggleButton');
+        const content = document.getElementById('content');
+
+        toggleButton.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+        });
+    </script>
 </body>
 </html>
