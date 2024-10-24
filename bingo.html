@@ -11,25 +11,52 @@
             background-color: #e8f1f5;
             margin: 0;
             padding: 0;
+            display: flex;
         }
         
-        .navbar {
-            display: flex;
+        .menu-button {
+            position: fixed;
+            top: 0.5rem;
+            left: 1rem;
             background-color: #2a7f38;
-            padding: 1rem 2rem;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 11000;
+            border-radius: 5px;
+        }
+
+        .menu-button span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 4px 0;
+        }
+
+        .navbar {
+            width: 0;
+            height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
+            background-color: #2a7f38;
+            overflow-x: hidden;
+            transition: width 0.3s;
+            padding-top: 3rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+        }
+
+        .navbar.expanded {
+            width: 250px;
         }
 
         .navbar a {
             color: #ffffff;
             text-decoration: none;
-            margin: 0 1.5rem;
+            margin: 1.5rem;
+            display: block;
             font-weight: bold;
             font-size: 1.1rem;
             transition: color 0.3s ease;
@@ -81,14 +108,32 @@
             margin: 1.5rem auto;
             line-height: 1.6;
         }
+
+        .content {
+            margin-left: 0;
+            margin-top: 4rem;
+            padding: 2rem;
+            flex-grow: 1;
+            transition: margin-left 0.3s ease;
+        }
+
+        .expanded + .content {
+            margin-left: 250px;
+        }
     </style>
 </head>
 <body>
     <h1>Colorful Bingo Game</h1>
 
+    <!-- Menu Button -->
+    <button class="menu-button" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
     <!-- Navigation Bar -->
-    <div class="navbar">
+    <div class="navbar" id="navbar">
         <a href="home.html">Home</a>
         <a href="music.html">Music Library</a>
         <a href="lab.html">Music Lab</a>
@@ -97,16 +142,28 @@
         <a href="calendar.html">Calendar</a>
     </div>
     
-    <div id="game-info" style="margin-top: 50px;">
-        <div id="timer">Time: <span id="time">0</span>s</div>
-        <div id="current-number">Current Number: <span id="number">Waiting...</span></div>
+    <div class="content" id="content">
+        <div id="game-info" style="margin-top: 50px;">
+            <div id="timer">Time: <span id="time">0</span>s</div>
+            <div id="current-number">Current Number: <span id="number">Waiting...</span></div>
+        </div>
+
+        <div id="bingo-container">
+            <div id="bingo-card"></div>
+        </div>
+
+        <button id="start-btn">Start Game</button>
     </div>
 
-    <div id="bingo-container">
-        <div id="bingo-card"></div>
-    </div>
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('expanded');
+        }
 
-    <button id="start-btn">Start Game</button>
+        const toggleButton = document.querySelector('.menu-button');
+        toggleButton.addEventListener('click', toggleMenu);
+    </script>
 
     <script src="bingo.js"></script>
 </body>
