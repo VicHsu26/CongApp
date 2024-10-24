@@ -73,6 +73,10 @@
             background-color: #c5cae9;
         }
 
+        .emotion-box.selected {
+            background-color: #b0bec5;
+        }
+
         .content {
             margin-left: 270px;
             padding: 6rem 2rem;
@@ -102,26 +106,8 @@
             background-color: #2a7f38;
         }
 
-        .playlist-container {
+        .tracks-container {
             margin-top: 2rem;
-        }
-
-        .playlist {
-            background-color: #ffffff;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .playlist a {
-            text-decoration: none;
-            color: #2a7f38;
-            font-weight: bold;
-        }
-
-        .playlist a:hover {
-            text-decoration: underline;
         }
 
         .track {
@@ -135,8 +121,8 @@
         }
 
         .track img {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             margin-right: 15px;
             border-radius: 5px;
         }
@@ -181,16 +167,117 @@
         <div class="emotion-box">Peaceful</div>
         <div class="emotion-box">Inspired</div>
         <div class="emotion-box">Joyful</div>
-        <!-- Add more emotions as needed -->
+        <div class="emotion-box">Calm</div>
+        <div class="emotion-box">Romantic</div>
+        <div class="emotion-box">Motivated</div>
+        <div class="emotion-box">Hopeful</div>
+        <div class="emotion-box">Curious</div>
+        <div class="emotion-box">Confident</div>
+        <div class="emotion-box">Bored</div>
+        <div class="emotion-box">Melancholic</div>
+        <div class="emotion-box">Content</div>
+        <div class="emotion-box">Restless</div>
+        <div class="emotion-box">Grateful</div>
+        <div class="emotion-box">Anxious</div>
+        <div class="emotion-box">Excited</div>
+        <div class="emotion-box">Loving</div>
+        <div class="emotion-box">Empowered</div>
+        <div class="emotion-box">Stressed</div>
+        <div class="emotion-box">Optimistic</div>
+        <div class="emotion-box">Surprised</div>
+        <div class="emotion-box">Worried</div>
+        <div class="emotion-box">Determined</div>
+        <div class="emotion-box">Lonely</div>
+        <div class="emotion-box">Overwhelmed</div>
+        <div class="emotion-box">Mellow</div>
+        <div class="emotion-box">Disappointed</div>
+        <div class="emotion-box">Proud</div>
+        <div class="emotion-box">Awestruck</div>
+        <div class="emotion-box">Guilty</div>
+        <div class="emotion-box">Playful</div>
+        <div class="emotion-box">Cheerful</div>
+        <div class="emotion-box">Jealous</div>
+        <div class="emotion-box">Sympathetic</div>
+        <div class="emotion-box">Frightened</div>
+        <div class="emotion-box">Amused</div>
+        <div class="emotion-box">Skeptical</div>
+        <div class="emotion-box">Grumpy</div>
+        <div class="emotion-box">Sleepy</div>
+        <div class="emotion-box">Vulnerable</div>
+        <div class="emotion-box">Shocked</div>
+        <div class="emotion-box">Disgusted</div>
+        <div class="emotion-box">Giddy</div>
+        <div class="emotion-box">Warm</div>
+        <div class="emotion-box">Empathetic</div>
+        <div class="emotion-box">Devoted</div>
+        <div class="emotion-box">Amazed</div>
+        <div class="emotion-box">Embarrassed</div>
+        <div class="emotion-box">Wistful</div>
+        <div class="emotion-box">Enthusiastic</div>
+        <div class="emotion-box">Overjoyed</div>
+        <div class="emotion-box">Nervous</div>
+        <div class="emotion-box">Sentimental</div>
+        <div class="emotion-box">Elated</div>
+        <div class="emotion-box">Serene</div>
+        <div class="emotion-box">Humorous</div>
+        <div class="emotion-box">Tender</div>
+        <div class="emotion-box">Flustered</div>
+        <div class="emotion-box">Bewildered</div>
+        <div class="emotion-box">Fulfilled</div>
+        <div class="emotion-box">Lethargic</div>
+        <div class="emotion-box">Shy</div>
+        <div class="emotion-box">Passionate</div>
+        <div class="emotion-box">Courageous</div>
+        <div class="emotion-box">Euphoric</div>
+        <div class="emotion-box">Annoyed</div>
+        <div class="emotion-box">Affectionate</div>
+        <div class="emotion-box">Hopeless</div>
+        <div class="emotion-box">Fascinated</div>
+        <div class="emotion-box">Joyous</div>
+        <div class="emotion-box">Wistful</div>
+        <div class="emotion-box">Hesitant</div>
+        <div class="emotion-box">Distracted</div>
+        <div class="emotion-box">Humbled</div>
+        <div class="emotion-box">Resentful</div>
+        <div class="emotion-box">Frustrated</div>
+        <div class="emotion-box">Agitated</div>
+        <div class="emotion-box">Refreshed</div>
+        <div class="emotion-box">Exhausted</div>
+        <div class="emotion-box">Thankful</div>
+        <div class="emotion-box">Conflicted</div>
+        <div class="emotion-box">Comfortable</div>
+        <div class="emotion-box">Blissful</div>
+        <div class="emotion-box">Ashamed</div>
+        <div class="emotion-box">Insecure</div>
+        <div class="emotion-box">Adventurous</div>
+        <div class="emotion-box">Grieved</div>
+        <div class="emotion-box">Reflective</div>
+        <div class="emotion-box">Thrilled</div>
+        <div class="emotion-box">Ecstatic</div>
+        <div class="emotion-box">Heartbroken</div>
+        <div class="emotion-box">Jubilant</div>
+        <div class="emotion-box">Afraid</div>
+        <div class="emotion-box">Hysterical</div>
+        <div class="emotion-box">Intrigued</div>
+        <div class="emotion-box">Motivated</div>
+        <div class="emotion-box">Terrified</div>
+        <div class="emotion-box">Regretful</div>
+        <div class="emotion-box">Energetic</div>
+        <div class="emotion-box">Worried</div>
+        <div class="emotion-box">Pensive</div>
+        <div class="emotion-box">Inquisitive</div>
+        <div class="emotion-box">Gleeful</div>
+        <div class="emotion-box">Determined</div>
+        <div class="emotion-box">Distracted</div>
+        <div class="emotion-box">Proud</div>
+        <div class="emotion-box">Loving</div>
+        <div class="emotion-box">Fearful</div>
     </div>
 
     <!-- Main Content -->
     <div class="content">
         <h1>Music Therapy for Your Emotions</h1>
-        <button onclick="searchSpotify()">Find Playlists on Spotify</button>
-        <div class="playlist-container" id="playlist-container">
-            <!-- Playlists will be dynamically inserted here -->
-        </div>
+        <button onclick="searchSpotify()">Find Songs on Spotify</button>
         <div class="tracks-container" id="tracks-container">
             <!-- Tracks will be dynamically inserted here -->
         </div>
@@ -222,52 +309,34 @@
             }
 
             const token = await getSpotifyToken();
-            const playlistContainer = document.getElementById('playlist-container');
             const tracksContainer = document.getElementById('tracks-container');
-            playlistContainer.innerHTML = '';
             tracksContainer.innerHTML = '';
 
             try {
-                const response = await fetch(`https://api.spotify.com/v1/search?q=${emotion}&type=playlist&limit=5`, {
+                const response = await fetch(`https://api.spotify.com/v1/search?q=${emotion}&type=track&limit=20`, {
                     headers: {
                         'Authorization': 'Bearer ' + token
                     }
                 });
 
                 const data = await response.json();
-                const playlists = data.playlists.items;
+                const tracks = data.tracks.items;
 
-                playlists.forEach(async playlist => {
-                    const playlistDiv = document.createElement('div');
-                    playlistDiv.className = 'playlist';
-                    playlistDiv.innerHTML = `<p>${playlist.name} - <a href="${playlist.external_urls.spotify}" target="_blank">Listen to Playlist</a></p>`;
-                    playlistContainer.appendChild(playlistDiv);
-
-                    // Fetch tracks for each playlist
-                    const tracksResponse = await fetch(`https://api.spotify.com/v1/playlists/${playlist.id}/tracks`, {
-                        headers: {
-                            'Authorization': 'Bearer ' + token
-                        }
-                    });
-
-                    const tracksData = await tracksResponse.json();
-                    tracksData.items.forEach(item => {
-                        const track = item.track;
-                        const trackDiv = document.createElement('div');
-                        trackDiv.className = 'track';
-                        trackDiv.innerHTML = `
-                            <img src="${track.album.images[0]?.url}" alt="Album Cover">
-                            <div class="track-info">
-                                <a href="${track.external_urls.spotify}" target="_blank">${track.name}</a>
-                                <span>by ${track.artists.map(artist => artist.name).join(', ')}</span>
-                            </div>
-                        `;
-                        tracksContainer.appendChild(trackDiv);
-                    });
+                tracks.forEach(track => {
+                    const trackDiv = document.createElement('div');
+                    trackDiv.className = 'track';
+                    trackDiv.innerHTML = `
+                        <img src="${track.album.images[0]?.url}" alt="Album Cover">
+                        <div class="track-info">
+                            <a href="${track.external_urls.spotify}" target="_blank">${track.name}</a>
+                            <span>by ${track.artists.map(artist => artist.name).join(', ')}</span>
+                        </div>
+                    `;
+                    tracksContainer.appendChild(trackDiv);
                 });
             } catch (error) {
-                console.error('Error fetching playlists or tracks:', error);
-                playlistContainer.innerHTML = '<p>Sorry, something went wrong while fetching playlists. Please try again later.</p>';
+                console.error('Error fetching tracks:', error);
+                tracksContainer.innerHTML = '<p>Sorry, something went wrong while fetching songs. Please try again later.</p>';
             }
         }
 
