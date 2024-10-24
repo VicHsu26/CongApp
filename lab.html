@@ -11,7 +11,6 @@
             background-color: #f0f4f8;
             margin: 0;
             padding: 0;
-            display: flex;
         }
 
         .menu-button {
@@ -34,56 +33,60 @@
             margin: 4px 0;
         }
 
-        .top-bar {
+        .header {
             width: 100%;
-            height: 60px;
             background-color: #2a7f38;
-            display: flex;
-            align-items: center;
-            padding: 0 2rem;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1200;
-        }
-
-        .top-bar h1 {
+            padding: 2rem;
+            text-align: center;
             color: #ffffff;
-            margin-left: 3%;
-            font-size: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
 
-        .navbar {
+        .sidebar {
             width: 0;
             height: 100vh;
+            background-color: #2a7f38;
+            padding-top: 5rem;
             position: fixed;
             top: 0;
             left: 0;
-            background-color: #2a7f38;
-            overflow-x: hidden;
-            transition: width 0.3s;
-            padding-top: 3rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease;
+            overflow: hidden;
             z-index: 1000;
         }
 
-        .navbar.expanded {
+        .sidebar.expanded {
             width: 250px;
         }
 
-        .navbar a {
+        .sidebar a {
+            display: block;
             color: #ffffff;
             text-decoration: none;
             margin: 1.5rem;
-            display: block;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: color 0.3s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .navbar a:hover {
+        .sidebar a:hover {
             color: #a3e4a3;
+        }
+
+        .content {
+            margin-top: 5rem;
+            padding: 2rem;
+            transition: margin-left 0.3s ease;
+            width: 100%;
+        }
+
+        .sidebar.expanded + .content {
+            margin-left: 250px;
         }
 
         .container {
@@ -117,9 +120,9 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <h1>PanaceaPoint</h1>
+    <!-- Header -->
+    <div class="header">
+        <h1>PanaceaPoint - Music Lab</h1>
     </div>
 
     <!-- Menu Button -->
@@ -129,8 +132,8 @@
         <span></span>
     </button>
 
-    <!-- Side Navigation Bar -->
-    <div class="navbar" id="navbar">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="navbar">
         <a href="home.html">Home</a>
         <a href="music.html">Music Library</a>
         <a href="lab.html">Music Lab</a>
@@ -140,15 +143,17 @@
     </div>
 
     <!-- Music Lab Section -->
-    <div class="container">
-        <h1>Music Lab</h1>
-        <div id="music-lab-container">
-            <iframe src="https://musiclab.chromeexperiments.com/Song-Maker/" allowfullscreen></iframe>
-            <iframe src="https://musiclab.chromeexperiments.com/Rhythm/" allowfullscreen></iframe>
-            <iframe src="https://musiclab.chromeexperiments.com/Chords/" allowfullscreen></iframe>
-            <iframe src="https://musiclab.chromeexperiments.com/Arpeggios/" allowfullscreen></iframe>
-            <iframe src="https://musiclab.chromeexperiments.com/Voice-Spinners/" allowfullscreen></iframe>
-            <iframe src="https://musiclab.chromeexperiments.com/Spectrogram/" allowfullscreen></iframe>
+    <div class="content">
+        <div class="container">
+            <h1>Music Lab</h1>
+            <div id="music-lab-container">
+                <iframe src="https://musiclab.chromeexperiments.com/Song-Maker/" allowfullscreen></iframe>
+                <iframe src="https://musiclab.chromeexperiments.com/Rhythm/" allowfullscreen></iframe>
+                <iframe src="https://musiclab.chromeexperiments.com/Chords/" allowfullscreen></iframe>
+                <iframe src="https://musiclab.chromeexperiments.com/Arpeggios/" allowfullscreen></iframe>
+                <iframe src="https://musiclab.chromeexperiments.com/Voice-Spinners/" allowfullscreen></iframe>
+                <iframe src="https://musiclab.chromeexperiments.com/Spectrogram/" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
