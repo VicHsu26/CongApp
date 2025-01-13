@@ -1,136 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PanaceaPoint - Your Wellness Hub</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e8f1f5;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .navbar {
-            display: flex;
-            background-color: #2a7f38;
-            padding: 1rem 2rem;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
+  <title>PanaceaPoint</title>
 
-        .navbar a:hover {
-            color: #a3e4a3;
-        }
-
-        .header-image {
-            width: 100%;
-            height: auto;
-        }
-
-        .hero-section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .hero-section p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 1.5rem auto;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #2a7f38;
-        }
-
-        .arrow-down {
-            font-size: 3rem;
-            color: #2a7f38;
-            text-align: center;
-            margin: 2rem auto;
-        }
-
-        .calendar-section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 2rem;
-            background-color: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .calendar-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .calendar-section p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 1.5rem auto;
-            line-height: 1.6;
-            color: #555;
-        }
-    </style>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="music.html">Music Library</a>
-        <a href="lab.html">Music Lab</a>
-        <a href="sudoku.html">Sudoku</a>
-        <a href="bingo.html">Bingo</a>
-        <a href="calendar.html">Calendar</a>
+  <div class="hero_area">
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div class="custom_nav2">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex  flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home ><span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="music_library/music.html">Music Library </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="music_lab/lab.html">Music Lab </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sudoku.html">Bingo </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="calendar.html">Calender </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="slider_container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                    <div class="detail-box">
+                      <h2>
+                        Welcome to
+                      </h2>
+                      <h1>
+                        PanaceaPoint
+                      </h1>
+                      <p>
+                        
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn-1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                    <div class="detail-box">
+                      <h2>
+                        Get Your Body
+                      </h2>
+                      <h1>
+                        Fitness Here
+                      </h1>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn-1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6 col-md-7 offset-md-6 offset-md-5">
+                    <div class="detail-box">
+                      <h2>
+                        Get Your Body
+                      </h2>
+                      <h1>
+                        Fitness Here
+                      </h1>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn-1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          About Energym
+        </h2>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <img src="images/about-img.png" alt="">
+        </div>
+        <div class="detail-box">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis
+          </p>
+          <a href="">
+            Read More
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Header Image -->
-    <img src="honors.png" alt="Honor Header" class="header-image">
-
-    <!-- Arrow Down Icon -->
-    <div class="arrow-down">&#x2193;</div>
-
-    <!-- Hero Section -->
-  <div class="hero-section">
-        <h1>Welcome to PanaceaPoint</h1>
-        <p>At <span class="highlight">PanaceaPoint</span>, we believe in a holistic approach to wellness, providing you with engaging tools and activities to enhance your well-being. Our platform is designed to support both your mental and physical health, with a variety of resources that cater to different needs, whether you want to relax, focus, or simply have fun. We understand that wellness is personal, and our offerings are here to empower you on your unique journey.</p>
-        <p>Our <span class="highlight">Music Library</span> offers specially curated music playlists that leverage the benefits of music therapy to help you relax, improve focus, or uplift your spirit. Music therapy has been proven to reduce anxiety, enhance mood, and even improve cognitive function. Each playlist is crafted to address specific emotions, helping you tap into the transformative power of music in an accessible way.</p>
-        <p>The <span class="highlight">Music Lab</span> allows you to experiment with sounds and create your own music, fostering creativity and providing a fun, therapeutic outlet. Whether you are an experienced musician or just exploring sound for the first time, the Music Lab encourages self-expression and emotional release, giving you the freedom to create music that resonates with your feelings.</p>
-        <p>Engage your mind with our interactive <span class="highlight">Sudoku</span> puzzles, or enjoy a game of <span class="highlight">Bingo</span> for a bit of lighthearted fun. Sudoku is known to improve memory, enhance concentration, and stimulate problem-solving skills, while Bingo offers an enjoyable social activity that can be shared with friends and family. These games provide a perfect blend of mental exercise and entertainment.</p>
-        <p> 
+  <section class="result_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="images/result-img.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-5">
+          <div class="detail-box">
+            <h2>
+              BUILT TO BRING <br>
+              BEST RESULTS
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+              ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            </p>
+            <a href="">
+              Get A Quote
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Calendar Section -->
-    <div class="calendar-section">
-        <h2>Caregiver Calendar</h2>
-        <p>The <span class="highlight">Caregiver Calendar</span> is here to help caregivers keep track of important activities, appointments, and daily routines for their loved ones. Staying organized is crucial, and our easy-to-use calendar ensures you have everything at your fingertips to manage care effectively and with confidence. By providing a clear overview of upcoming events and tasks, the calendar helps minimize stress and allows caregivers to focus on providing the best possible support for their loved ones. It is an essential tool for simplifying daily life, promoting peace of mind, and enhancing the quality of care.</p>
-    </div>
+  <section class="info_section layout_padding2-top">
+  </section>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document
+        .querySelector(".custom_menu-btn")
+        .classList.toggle("menu_btn-style");
+    }
+  </script>
 </body>
+
 </html>
