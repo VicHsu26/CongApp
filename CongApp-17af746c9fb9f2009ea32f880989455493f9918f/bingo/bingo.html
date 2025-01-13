@@ -1,103 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Bingo Game</title>
-    <link rel="stylesheet" href="bingo.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e8f1f5;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .navbar {
-            display: flex;
-            background-color: #2a7f38;
-            padding: 1rem 2rem;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
+  <title>PanaceaPoint</title>
 
-        .navbar a:hover {
-            color: #a3e4a3;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 6rem 2rem;
-            background: linear-gradient(to right, #6dd5ed, #2193b0);
-            color: #fff;
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-section p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 1.5rem auto;
-            line-height: 1.6;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #ffe500;
-        }
-
-        .calendar-section {
-            text-align: center;
-            padding: 4rem 2rem;
-            background-color: #ffffff;
-            color: #333;
-        }
-
-        .calendar-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .calendar-section p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 1.5rem auto;
-            line-height: 1.6;
-        }
-    </style>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+    rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
+  <link href="bingo.css" rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Colorful Bingo Game</h1>
+  <div class="hero_area">
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div class="custom_nav2">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex  flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../home.html">Home </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../music_library/music.html">Music Library </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../music_lab/lab.html">Music Lab </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../sudoku.html">Sudoku </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="bingo.html">Bingo ><span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../calendar.html">Calender </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="music.html">Music Library</a>
-        <a href="lab.html">Music Lab</a>
-        <a href="sudoku.html">Sudoku</a>
-        <a href="bingo.html">Bingo</a>
-        <a href="calendar.html">Calendar</a>
-    </div>
-    
-    <div id="game-info" style="margin-top: 50px;">
+    <div id="game-info" style="margin-top: 45%">
         <div id="timer">Time: <span id="time">0</span>s</div>
         <div id="current-number">Current Number: <span id="number">Waiting...</span></div>
     </div>
@@ -108,6 +71,17 @@
 
     <button id="start-btn">Start Game</button>
 
-    <script src="bingo.js"></script>
+  <script src="bingo.js"></script>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document
+        .querySelector(".custom_menu-btn")
+        .classList.toggle("menu_btn-style");
+    }
+  </script>
 </body>
 </html>
