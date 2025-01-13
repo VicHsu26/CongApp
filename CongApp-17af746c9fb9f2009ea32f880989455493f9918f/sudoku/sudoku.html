@@ -18,7 +18,8 @@
     rel="stylesheet" />
   <link href="../css/style.css" rel="stylesheet" />
   <link href="../css/responsive.css" rel="stylesheet" />
-  <link href="bingo.css" rel="stylesheet" />
+  <link href="script.js" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -44,11 +45,11 @@
                   <li class="nav-item">
                     <a class="nav-link" href="../music_lab/lab.html">Music Lab </a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../sudoku/sudoku.html">Sudoku </a>
-                  </li>
                   <li class="nav-item active">
-                    <a class="nav-link" href="bingo.html">Bingo ><span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="sudoku/sudoku.html">Sudoku ><span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../bingo/bingo.html">Bingo </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="../calendar.html">Calender </a>
@@ -59,19 +60,50 @@
           </nav>
         </div>
       </div>
-
-    <div id="game-info" style="margin-top: 45%">
-        <div id="timer">Time: <span id="time">0</span>s</div>
-        <div id="current-number">Current Number: <span id="number">Waiting...</span></div>
+      <div class="content" style="margin-top: 45%;">
+        <div id="menu">
+            <h1>Sudoku</h1>
+            <button id="startGameBtn">Start Game</button>
+        </div>
+    
+        <div id="game" style="display: none;">
+            <h2>Sudoku Puzzle</h2>
+            <div id="sudokuGrid"></div>
+            <div id="numberSelector" style="display: none;">
+                <button class="numberBtn">1</button>
+                <button class="numberBtn">2</button>
+                <button class="numberBtn">3</button>
+                <button class="numberBtn">4</button>
+                <button class="numberBtn">5</button>
+                <button class="numberBtn">6</button>
+                <button class="numberBtn">7</button>
+                <button class="numberBtn">8</button>
+                <button class="numberBtn">9</button>
+                <button class="numberBtn clearBtn">Clear</button>
+            </div>
+            <button id="resetBtn">Reset</button>
+            <p id="statusMessage"></p>
+        </div>
     </div>
+    
+    <script src="script.js"></script>
+    </body>
+    
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 0;
+    }
 
-    <div id="bingo-container">
-        <div id="bingo-card"></div>
-    </div>
-
-    <button id="start-btn">Start Game</button>
-
-  <script src="bingo.js"></script>
+    
+    .content {
+        margin-top: 5rem;
+        padding: 2rem;
+    }
+    </style>
+      
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
 
@@ -84,4 +116,5 @@
     }
   </script>
 </body>
+
 </html>

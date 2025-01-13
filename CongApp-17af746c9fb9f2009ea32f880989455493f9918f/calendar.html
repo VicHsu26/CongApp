@@ -1,42 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caregiver Calendar - PanaceaPoint</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f4f8;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-        .navbar {
-            display: flex;
-            background-color: #2a7f38;
-            padding: 1rem 2rem;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+  <title>PanaceaPoint</title>
 
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s ease;
-        }
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
 
-        .navbar a:hover {
-            color: #a3e4a3;
-        }
+<body>
+  <div class="hero_area">
+    <section class=" slider_section position-relative">
+      <div class="container">
+        <div class="custom_nav2">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex  flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="music_library/music.html">Music Library </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="music_lab/lab.html">Music Lab </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sudoku/sudoku.html">Sudoku </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="bingo/bingo.html">Bingo </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="calendar.html">Calender ><span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <style>
         .calendar-container {
             max-width: 900px;
             margin: 4rem auto;
+            margin-top: 45%;
             padding: 2rem;
             background-color: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -62,16 +88,6 @@
         }
     </style>
 </head>
-<body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="music.html">Music Library</a>
-        <a href="lab.html">Music Lab</a>
-        <a href="sudoku.html">Sudoku</a>
-        <a href="bingo.html">Bingo</a>
-        <a href="calendar.html">Calendar</a>
-    </div>
 
     <!-- Calendar Section -->
     <div class="calendar-container">
@@ -79,5 +95,16 @@
         <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id_here%40group.calendar.google.com&ctz=America%2FNew_York&mode=week&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showDate=1&showNav=1&showCalendars=1"></iframe>
         <p>This calendar is designed to help caregivers manage important appointments and daily routines efficiently. Stay organized and keep track of everything in one place with the convenience of editing directly within the calendar view. No need to open a separate tab—just click on events to edit or add new activities as needed!</p>
     </div>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document
+        .querySelector(".custom_menu-btn")
+        .classList.toggle("menu_btn-style");
+    }
+  </script>
 </body>
 </html>
